@@ -1,0 +1,31 @@
+"Metadata": {
+    "SNC::Parameter::Metadata": {
+        "az": {
+            "datasource": "ServiceNow::Pools::AvailabilityZonePool.getObjectsByLDC"
+        },
+        "instance_type": {
+            "datasource": "ServiceNow::Pools::HardwareTypePool.getByServiceAccount"
+        },
+        "image": {
+            "datasource": "ServiceNow::Pools::ImagePool.getByServiceAccount"
+        },
+        "lb": {
+            "datasource": "ServiceNow::Pools::LoadBalancerPool.All"
+        },
+        "rgName": {
+            "datasource": "ServiceNow::Pools::ResourceGroupPool.getByLDC"
+        },
+        "network": {
+            "datasource": "ServiceNow::Pools::NetworkPool.getObjectsByLDC"
+        },
+        "vpc_name": {
+            "datasource": "ServiceNow::Pools::NetworkPool.getNameByLDC"
+        },
+        "subnet_name": {
+            "datasource": "ServiceNow::Pools::SubnetPool.getObjectsByNetwork",
+            "datasourceFilter": {
+                "Network": "vpc_name"
+            }
+        }
+    }
+}
